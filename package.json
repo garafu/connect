@@ -1,6 +1,6 @@
 {
   "name": "connection-tester",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "express": "^4.17.2",
     "json-beautify": "^1.1.1",
     "mysql2": "^2.3.3",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "tedious": "^14.0.0"
   }
 }
