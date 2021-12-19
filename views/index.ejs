@@ -1,66 +1,51 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <%- include("./_share/meta.ejs") %>
+  <%- include("./_share/stylesheets.ejs") %>
   <title>Database Connection Test</title>
 </head>
+
 <body>
-  <div class="container">
-    <div class="row mt-3 mb-5">
-      <h1>Database Connection Test</h1>
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <%- include("./_share/sidemenu.ejs") %>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Home</h1>
+          <!-- <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <span data-feather="calendar"></span>
+              This week
+            </button>
+          </div> -->
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">PostgreSQL</h5>
+                <p class="card-text">PostgreSQL connection test.</p>
+                <a href="/postgresql" class="btn btn-primary">Go</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
     </div>
-
-    <form class="row g-3">
-      <!-- <div class="mb-3 row">
-        <label for="connectionString" class="col-sm-2 col-form-label">connectionString</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="connectionString" name="connectionString">
-        </div>
-      </div> -->
-      <div class="mb-3 row">
-        <label for="user" class="col-sm-2 col-form-label">user</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="user" name="user">
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="host" class="col-sm-2 col-form-label">host</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="host" name="host">
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="database" class="col-sm-2 col-form-label">database</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="database" name="database">
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="password" class="col-sm-2 col-form-label">password</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="password" name="password">
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="port" class="col-sm-2 col-form-label">port</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="port" name="port">
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <div class="col-sm-10">
-          <input type="button" value="send" class="btn btn-primary" id="btnSend" />
-        </div>
-      </div>
-    </form>
-
-    <pre id="result"></pre>
   </div>
-  <script src="https://code.jquery.com/jquery-2.2.4.js" crossorigin="anonymous"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script> -->
+
+  <%- include("./_share/scripts.ejs") %>
+
   <script src="/public/scripts/index.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

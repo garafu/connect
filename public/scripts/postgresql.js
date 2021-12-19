@@ -1,26 +1,29 @@
-var btnSend_onclick = function (event) {
-  $("#result").empty();
+var request = function () {
   $.ajax({
     type: "POST",
-    url: "/",
+    url: "/postgresql",
     dataType: "json",
     data: {
-      user: $("#user").val(),
       host: $("#host").val(),
-      database: $("#database").val(),
-      password: $("#password").val(),
       port: $("#port").val(),
-      connectionString: $("#connectionString").val()
+      database: $("#database").val(),
+      user: $("#user").val(),
+      password: $("#password").val(),
+      ssl: $("#ssl").val()
     },
     success: (data, textStatus, jqXHR) => {
       $("#result").html(JSON.stringify(data));
-      // alert(data);
     },
     error: (jqXHR, textStatus, errorThrown) => {
-      $("#result").html(jqXHR.responseText);
-      // alert(textStatus);
+      // $("#result").text(jqXHR.responseText);
+      $("#result").append(document.createTextNode(jqXHR.responseText));
     }
-  })
+  });
+};
+
+var btnSend_onclick = function (event) {
+  $("#result").empty();
+  window.setTimeout(request, 100);
 };
 
 var document_onready = function () {
