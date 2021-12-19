@@ -15,7 +15,6 @@ var request = function () {
       $("#result").html(JSON.stringify(data));
     },
     error: (jqXHR, textStatus, errorThrown) => {
-      // $("#result").text(jqXHR.responseText);
       $("#result").append(document.createTextNode(jqXHR.responseText));
     }
   });
