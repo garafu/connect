@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/meta.ejs") %>
+  <%- include("./_share/stylesheets.ejs") %>
+  <title>MySQL</title>
+</head>
+
+<body>
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <%- include("./_share/sidemenu.ejs") %>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">MySQL</h1>
+        </div>
+        <div class="mt-5">
+          <form class="row g-3">
+            <div class="mb-3 row">
+              <label for="host" class="col-sm-2 col-form-label">host</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="host" name="host">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="port" class="col-sm-2 col-form-label">port</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="port" name="port" placeholder="3306">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="database" class="col-sm-2 col-form-label">database</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="database" name="database" placeholder="">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="user" class="col-sm-2 col-form-label">user</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="user" name="user">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="password" class="col-sm-2 col-form-label">password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="password" name="password">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="ssl" class="col-sm-2 col-form-label">ssl</label>
+              <div class="col-sm-10">
+                <div class="form-check form-switch h-100 d-flex align-items-center">
+                  <input class="form-check-input" type="checkbox" role="switch" id="ssl" name="ssl" checked>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-10">
+                <input type="button" value="send" class="btn btn-primary" id="btnSend" />
+              </div>
+            </div>
+          </form>
+      
+          <pre id="result" class="bg-light py-1 px-3 border rounded-3">&nbsp;</pre>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <%- include("./_share/scripts.ejs") %>
+  <script src="/public/scripts/mysql.js"></script>
+</body>
+
+</html>
