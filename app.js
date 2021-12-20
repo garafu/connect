@@ -11,5 +11,6 @@ app.use("/", require("./routes/index.js"));
 app.use("/postgresql", require("./routes/postgresql.js"));
 app.use("/mysql", require("./routes/mysql.js"));
 app.use("/mssql", require("./routes/mssql.js"));
+app.use("/ping", require("./routes/ping.js"));
 
 app.listen(3000);
