@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/meta.ejs") %>
+  <%- include("./_share/stylesheets.ejs") %>
+  <title>HTTP(S)</title>
+</head>
+
+<body>
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <%- include("./_share/sidemenu.ejs") %>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">HTTP(S)</h1>
+        </div>
+        <div class="mt-5">
+          <form class="row g-3" id="form">
+            <div class="mb-3 row">
+              <div class="input-group">
+                <select class="form-select flex-grow-0 flex-shrink-0 text-center" style="width: 8em;" id="method" name="method">
+                  <option value="GET" selected>GET</option>
+                  <option value="POST">POST</option>
+                  <option value="PUT">PUT</option>
+                  <option value="DELETE">DELETE</option>
+                  <option value="PATCH">PATCH</option>
+                  <option value="HEAD">HEAD</option>
+                </select>
+                <input type="text" class="form-control" id="url" name="url" />
+                <button class="btn btn-primary" type="button" id="btnSend">execute</button>
+              </div>  
+            </div>
+            <div class="mb-3 row">
+              <label for="header" class="col-sm-2 col-form-label">header</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="header" name="header" rows="4"></textarea>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="body" class="col-sm-2 col-form-label">body</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="body" name="body" rows="10"></textarea>
+              </div>
+            </div>
+          </form>
+      
+          <pre id="result" class="bg-light py-1 px-3 border rounded-3">&nbsp;</pre>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <%- include("./_share/scripts.ejs") %>
+  <script src="/public/scripts/https.js"></script>
+</body>
+
+</html>
