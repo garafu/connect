@@ -6,6 +6,8 @@ RUN  \
 cd /app; \
 npm install;
 
+ENV PORT=3000
+
 EXPOSE 3000
 WORKDIR /app
 ENTRYPOINT ["docker-entrypoint.sh"]

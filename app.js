@@ -1,3 +1,4 @@
+const { PORT } = require("./config.js");
 const path = require("path");
 const bodyparser = require("body-parser");
 const express = require("express");
@@ -14,4 +15,6 @@ app.use("/mssql", require("./routes/mssql.js"));
 app.use("/ping", require("./routes/ping.js"));
 app.use("/https", require("./routes/https.js"));
 
-app.listen(3000);
+app.listen(PORT, () => {
+  console.log(`Application starts with port: ${PORT}`);
+});
